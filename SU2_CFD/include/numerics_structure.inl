@@ -398,8 +398,6 @@ inline double CSourcePieceWise_TurbSA::GetDestruction(void) { return Destruction
 
 inline double CSourcePieceWise_TurbSA::GetCrossProduction(void) { return CrossProduction; }
 
-
-
 inline void CSourcePieceWise_TurbML::SetIntermittency(double intermittency_in) { intermittency = intermittency_in; }
 
 inline void CSourcePieceWise_TurbML::SetProduction(double val_production) { Production = val_production; }

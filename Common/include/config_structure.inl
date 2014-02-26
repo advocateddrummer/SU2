@@ -966,3 +966,7 @@ inline double CConfig::GetGust_Ampl(void) {return Gust_Ampl; }
 inline double CConfig::GetGust_Begin_Time(void) {return Gust_Begin_Time; }
 
 inline double CConfig::GetGust_Begin_Loc(void) {return Gust_Begin_Loc; }
+
+inline bool CConfig::GetActuator_Disk(void) { return Actuator_Disk; }
+
+inline unsigned short CConfig::GetActuator_Disk_Type(void) {return Actuator_Disk_Type; }

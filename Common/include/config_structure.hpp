@@ -612,7 +612,9 @@ private:
   Gust_Ampl,                  /*!< \brief Gust amplitude. */
   Gust_Begin_Time,            /*!< \brief Time at which to begin the gust. */
   Gust_Begin_Loc;             /*!< \brief Location at which the gust begins. */
-
+  bool Actuator_Disk; /*!< \brief Flag for whether or not we have an actuator disk. */
+  unsigned short Actuator_Disk_Type;	/*!< \brief Type of actuator disk. */
+  
   bool ExtraOutput;
 
 	map<string, CAnyOptionRef*> param; /*!< \brief associates option names (strings) with options */
@@ -4489,6 +4491,17 @@ public:
 	 */
 	double GetGust_Begin_Loc(void);
 
+  /*!
+	 * \brief Get information about the actuator disk model.
+	 * \return <code>TRUE</code> if there is an actuator disk; otherwise <code>FALSE</code>.
+	 */
+	bool GetActuator_Disk(void);
+  
+  /*!
+	 * \brief Get the type of actuator disk model being used.
+	 * \return type of actuator disk to use for the simulation.
+	 */
+	unsigned short GetActuator_Disk_Type(void);
 
 	/*!
 	 * \brief Given arrays x[1..n] and y[1..n] containing a tabulated function, i.e., yi = f(xi), with

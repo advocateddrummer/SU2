@@ -926,6 +926,8 @@ void Numerics_Preprocessing(CNumerics ****numerics_container,
             numerics_container[iMGlevel][FLOW_SOL][SOURCE_FIRST_TERM] = new CSourceGravity(nDim, nVar_Flow, config);
           else if (config->GetWind_Gust() == YES)
             numerics_container[iMGlevel][FLOW_SOL][SOURCE_FIRST_TERM] = new CSourceWindGust(nDim, nVar_Flow, config);
+          else if (config->GetActuator_Disk() == YES)
+            numerics_container[iMGlevel][FLOW_SOL][SOURCE_FIRST_TERM] = new CSourceActuatorDisk_Flow(nDim, nVar_Flow, config);
           else
             numerics_container[iMGlevel][FLOW_SOL][SOURCE_FIRST_TERM] = new CSourceNothing(nDim, nVar_Flow, config);
           

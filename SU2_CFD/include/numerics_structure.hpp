@@ -4779,6 +4779,38 @@ public:
 };
 
 /*!
+ * \class CSourceActuatorDisk_Flow
+ * \brief Class for a source term due to an actuator disk model.
+ * \ingroup SourceDiscr
+ * \author J. Sinsay, A. Wendorff, T. Economon
+ * \version 3.0.0 "eagle"
+ */
+class CSourceActuatorDisk_Flow : public CNumerics {
+public:
+  
+	/*!
+	 * \brief Constructor of the class.
+	 * \param[in] val_nDim - Number of dimensions of the problem.
+	 * \param[in] val_nVar - Number of variables of the problem.
+	 * \param[in] config - Definition of the particular problem.
+	 */
+	CSourceActuatorDisk_Flow(unsigned short val_nDim, unsigned short val_nVar, CConfig *config);
+  
+	/*!
+	 * \brief Destructor of the class.
+	 */
+	~CSourceActuatorDisk_Flow(void);
+  
+	/*!
+	 * \brief Residual of the actuator disk source term.
+	 * \param[out] val_residual - Pointer to the total residual.
+   * \param[out] val_Jacobian_i - Jacobian of the numerical method at node i (implicit computation).
+	 * \param[in] config - Definition of the particular problem.
+	 */
+	void ComputeResidual(double *val_residual, double **val_Jacobian_i, CConfig *config);
+};
+
+/*!
  * \class CSource_Template
  * \brief Dummy class.
  * \ingroup SourceDiscr

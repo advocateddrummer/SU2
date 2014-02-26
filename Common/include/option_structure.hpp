@@ -996,6 +996,20 @@ static const map<string, ENUM_CONVERGE_CRIT> Converge_Crit_Map = CCreateMap<stri
 ("CAUCHY", CAUCHY)
 ("RESIDUAL", RESIDUAL);
 
+/*!
+ * \brief type of actuator disk models
+ */
+enum ENUM_ACTUATOR_DISK_TYPE {
+  NO_ACTUATOR_DISK = 0,      /*!< \brief _______. */
+	IDEAL = 1,      /*!< \brief Ideal actuator disk model (simplest)  */
+	BEM = 2,         /*!< \brief Blade element momentum actuator disk model */
+      /*!< \brief  A gust made from vortices */
+};
+static const map<string, ENUM_ACTUATOR_DISK_TYPE> Actuator_Disk_Type_Map = CCreateMap<string, ENUM_ACTUATOR_DISK_TYPE>
+("NONE", NO_ACTUATOR_DISK)
+("IDEAL", IDEAL)
+("BEM", BEM);
+
 /* END_CONFIG_ENUMS */
 
 /*!

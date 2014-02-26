@@ -900,6 +900,15 @@ void CConfig::SetConfig_Options(unsigned short val_iZone, unsigned short val_nZo
 	/* DESCRIPTION: Thermal diffusivity constant */
 	AddScalarOption("THERMAL_DIFFUSIVITY", Thermal_Diffusivity, 1.172E-5);
   
+  /*--- Options related to the actuator disk model ---*/
+	/* CONFIG_CATEGORY: Actuator Disk */
+  
+  /* DESCRIPTION: Apply an actuator disk */
+	AddSpecialOption("ACTUATOR_DISK", Actuator_Disk, SetBoolOption, false);
+  /* DESCRIPTION: Type of gust */
+	AddEnumOption("ACTUATOR_DISK_TYPE", Actuator_Disk_Type, Actuator_Disk_Type_Map, "NONE");
+//  /* DESCRIPTION: Actuator paramter example (meters) */
+//  AddScalarOption("ACTUATOR_DISK_PARAM", Actuator_Disk_Param, 0.0);
   
 	/* END_CONFIG_OPTIONS */
   
